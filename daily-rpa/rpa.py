@@ -12,6 +12,32 @@ time.sleep(1)
 pyautogui.write('https://drive.google.com/drive/u/0/my-drive')
 pyautogui.press('enter')
 
+# Criando nova pasta para adicionar arquivos
+time.sleep(2)
+create_folder = pyautogui.confirm(text='Would you like to create a new folder here?', title='New Folder?', buttons=['Yes', 'No'])
+
+if create_folder == 'Yes':
+    time.sleep(2)
+    pyautogui.moveTo(69, 200)
+    time.sleep(3)
+    pyautogui.leftClick()
+    time.sleep(2)
+    pyautogui.doubleClick()
+    time.sleep(2)
+    pyautogui.moveTo(1000, 566)
+    time.sleep(3.5)
+    pyautogui.leftClick()
+    time.sleep(3.5)
+    pyautogui.hotkey('ctrlleft', 'a')
+    time.sleep(1.5)
+    pyautogui.press('del')
+    time.sleep(2)
+    pyautogui.write('Excel files')
+    time.sleep(5)
+    pyautogui.press('enter')
+    time.sleep(3)
+
+time.sleep(1)
 pyautogui.hotkey('winleft', 'd')
 time.sleep(1)
 
@@ -31,16 +57,20 @@ time.sleep(1.5)
 pyautogui.mouseUp()
 time.sleep(5)
 
+# Realizar uma condicional para quando o usuário apertar NO o programa parar
 delete_file = pyautogui.confirm(text='Would you like to delete this file now?', title='WARNING!', buttons=['Yes', 'No']);
 
 if delete_file == 'Yes': 
     time.sleep(1)
+# Movendo o cursor do mouse até a aba de Recentes
     pyautogui.moveTo(98, 374)
     pyautogui.leftClick()
     time.sleep(1)
+# Movendo cursor do mouse até o arquivo Vendas.xlsx
     pyautogui.moveTo(379, 388)
     pyautogui.leftClick()
     time.sleep(2)
+# Deletando o arquivo Vendas.xlsx
     pyautogui.leftClick() 
     time.sleep(1)
     pyautogui.press('del', presses=2)
